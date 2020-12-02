@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 
-const DropDown = ({ options, selected, onSelectedChange }) => {
+const DropDown = ({ options, selected, onSelectedChange, label }) => {
 
     const [toggle, setToggle] = useState(false);
 
@@ -42,7 +42,7 @@ const DropDown = ({ options, selected, onSelectedChange }) => {
     return (
         <div ref={ref} className="ui form">
             <div className="field">
-                <label className="label">Select a color</label>
+                <label className="label">{ label }</label>
                 <div 
                     onClick={() => setToggle(!toggle)} 
                     className={`ui selection dropdown ${toggle ? 'visible active' : ''}`}
